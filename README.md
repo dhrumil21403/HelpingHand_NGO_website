@@ -1,4 +1,5 @@
 # HelpingHand_NGO_website
+The code is in master branch.
 This is my Computer Engineering Final year project developed using Python Django.
 Helping Hand is a web application which is made for an NGO.
 Using this web application a user can donate the foods, clothes, money, medicines etc. without going anywhere at any time from any place.
