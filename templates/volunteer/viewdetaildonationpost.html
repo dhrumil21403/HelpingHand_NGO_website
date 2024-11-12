@@ -1,0 +1,94 @@
+{% extends 'volunteer/common/layout.html'%}
+{% block content %}
+
+     <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <!-- Basic table card start -->
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Donation Post</h3>
+                            <!-- <span>use class <code>table-hover</code> inside table element</span> -->
+                            
+                        </div>
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <!-- class="table table-hover" -->
+                                <form method="POST" action="/volunteer/donationstatus/{{result.id}}">
+                                    {% csrf_token %}
+                                <table   class="table table-hover">
+                                    <!-- <tr>
+                                        <td>Donation ID</td>
+                                        <td>{{result.id}}</td>
+                                    </tr> -->
+                                    <tr>
+                                        <td>Title</td>
+                                        <td>{{result.title}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Description</td>
+                                        <td>{{result.decoration}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Category</td>
+                                        <td>{{result.category.cname}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Date</td>
+                                        <td>{{result.date}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Address</td>
+                                        <td>{{result.address}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>City</td>
+                                        <td>{{result.city.city_name}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Area</td>
+                                        <td>{{result.area.area_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>State</td>
+                                        <td>{{result.state.state_name}}</td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <td>Accept</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reject</td>
+                                        <td></td>
+                                    </tr> -->
+                                    <tr>
+                                        <td colspan="2" align="center"><input type="submit" value="Accept" class="btn btn-primary btn-lg" ></td>
+                                    </tr>
+                                </table>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Page-body end -->
+            </div>
+        </div>
+        <!-- Main-body end -->
+
+        <div id="styleSelector">
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock%}
+

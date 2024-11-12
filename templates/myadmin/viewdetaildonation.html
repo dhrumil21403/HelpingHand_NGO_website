@@ -1,0 +1,82 @@
+{% extends 'myadmin/common/layout.html'%}
+{% block content %}
+
+     <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <!-- Basic table card start -->
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Donations</h3>
+                            <!-- <span>use class <code>table-hover</code> inside table element</span> -->
+                            
+                        </div>
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <!-- class="table table-hover" -->
+                                <form method="POST" action="">
+                                    {% csrf_token %}
+                                <table   class="table table-hover">
+                                     <tr>
+                                        <td>ID</td>
+                                        <td>{{result.id}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DonationID</td>
+                                        <td>{{result.donation_id}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Title</td>
+                                        <td>{{result.donation.title}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Description</td>
+                                        <td>{{result.donation.decoration}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Date</td>
+                                        <td>{{result.donation.date}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>State</td>
+                                        <td>{{result.donation.state.state_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>City</td>
+                                        <td>{{result.donation.city.city_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Area</td>
+                                        <td>{{result.donation.area.area_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address</td>
+                                        <td>{{result.donation.address}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Category</td>
+                                        <td>{{result.donation.category.cname}}</td>
+                                    </tr>
+                                </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Page-body end -->
+            </div>
+        </div>
+        <!-- Main-body end -->
+
+        <div id="styleSelector">
+
+        </div>
+    </div>
+
+{% endblock%}
+

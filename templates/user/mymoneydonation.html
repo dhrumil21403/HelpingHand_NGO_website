@@ -1,0 +1,74 @@
+{% extends 'user/common/layout.html' %}
+{% load static %}
+{% block content %}        
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>My Money Donation</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="/user/index">Home</a>
+                        <a href="/user/mymoneydonation">My Money Donation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        
+        <!-- Contact Start -->
+        <div class="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Get In Touch</p>
+                    <h2>Donation Details</h2>
+                </div>
+                <!-- <div class="contact-img">
+                    <img src="{% static 'user/img/contact.jpg' %}" alt="Image">
+                </div> -->
+                <div>
+                    <!-- class="contact-form" -->
+                        <div id="success"></div>
+                     <div class="table-responsive">
+                    <form  id="" method="POST" action="">
+                            {% csrf_token %}
+                        <table border="0" class="table table-hover" cellpadding="0" cellspacing="0">
+                            <div class="control-group">
+                                        <tr>
+                                            <!-- <td>ID</td> -->
+                                            <td>User</td>
+                                            <td>Amount</td>
+                                            <td>Description</td>
+                                            <td>Date</td>
+                                        </tr>
+                            </div>
+                            {% for row in result %}
+                                    <tbody>
+                                        <tr>
+                                            <!-- <th scope="row">{{row.id}}</th> -->
+                                            <td>{{row.user}}</td>
+                                            <td>{{row.amount}}</td>
+                                            <td>{{row.description}}</td>
+                                            <td>{{row.date}}</td>
+                                        </tr>    
+                                    </tbody>
+                            {% endfor %}
+    
+                            <!-- <div>
+                                <button class="btn btn-custom" type="submit" name="submit" id="sendMessageButton">Send Donation</button>
+                            </div> -->
+                        </table>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+
+        
+
+{% endblock %}
+

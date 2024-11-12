@@ -1,0 +1,100 @@
+{% extends 'myadmin/common/layout.html'%}
+{% block content %}
+
+     <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <!-- Basic table card start -->
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>User</h3>
+                            <!-- <span>use class <code>table-hover</code> inside table element</span> -->
+                            
+                        </div>
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <!-- class="table table-hover" -->
+                                <table   class="table table-hover">
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>{{result.user_id}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Firstname</td>
+                                        <td>{{result.user.first_name}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Lastname</td>
+                                        <td>{{result.user.last_name}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Email</td>
+                                        <td>{{result.user.email}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Username</td>
+                                        <td>{{result.user.username}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Contact</td>
+                                        <td>{{result.contact}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>dob</td>
+                                        <td>{{result.dob}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Address</td>
+                                        <td>{{result.address}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Gender</td>
+                                        <td>{{result.gender}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>City_id</td>
+                                        <td>{{result.city.city_name}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Area_id</td>
+                                        <td>{{result.area.area_name}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>Date</td>
+                                        <td>{{result.date}}</td>
+                                    </tr>
+                                     <tr>
+                                        <td>RoleID</td>
+                                        <td>{{result.role.role}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Image</td>
+                                        <td>{{result.image}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Page-body end -->
+            </div>
+        </div>
+        <!-- Main-body end -->
+
+        <div id="styleSelector">
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock%}
+

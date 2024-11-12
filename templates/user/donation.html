@@ -1,0 +1,96 @@
+{% extends 'user/common/layout.html' %}
+{% load static %}
+{% block content %}        
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Donation</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="/user/index">Home</a>
+                        <a href="/user/donation">Donation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        
+        <!-- Contact Start -->
+        <div class="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Get In Touch</p>
+                    <h2>Donation Details</h2>
+                </div>
+                <div class="contact-img">
+                    <img src="{% static 'user/img/contact.jpg' %}" alt="Image">
+                </div>
+                <div class="contact-form">
+                        <div id="success"></div>
+                        <form  id="" novalidate="novalidate" method="POST" action="/user/storedonation">
+                            {% csrf_token %}
+                            <div class="control-group">
+                                <input type="text" class="form-control" name='title' id="title" placeholder="Title" required="required"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control" name="decoration" id="decoration" placeholder="Description" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <select name="category" id="category" class="form-control">
+                                    <option value="">Category</option>
+                                    {% for c in category %}
+                                    <option value="{{c.id}}">{{c.cname}}</option>
+                                    {% endfor %}
+                                </select>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control" name="address" id="address" placeholder="Address" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <select name="city" id="city" class="form-control">
+                                    <option value="">City</option>
+                                    {% for ci in city %}
+                                    <option value="{{ci.id}}">{{ci.city_name}}</option>
+                                    {% endfor %}
+                                </select>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <select name="area" id="area" class="form-control">
+                                    <option value="">Area</option>
+                                    {% for a in area %}
+                                    <option value="{{a.id}}">{{a.area_name}}</option>
+                                    {% endfor %}
+                                </select>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                             <div class="control-group">
+                                <select name="state" id="state" class="form-control">
+                                    <option value="">State</option>
+                                    {% for s in state %}
+                                    <option value="{{s.id}}">{{s.state_name}}</option>
+                                    {% endfor %}
+                                </select>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-custom" type="submit" name="submit" id="sendMessageButton">Send Donation</button>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+
+        
+
+{% endblock %}
+

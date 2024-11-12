@@ -1,0 +1,86 @@
+{% extends 'user/common/layout.html' %}
+{% load static %}
+{% block content %}        
+                
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Volunteer</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="/user/index">Home</a>
+                        <a href="/user/volunteer">Volunteer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        
+        <!-- Volunteer Start -->
+        <div class="container">
+            <div class="volunteer" data-parallax="scroll" data-image-src="{% static 'user/img/volunteer.jpg' %}">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="volunteer-form">
+                            <form method="POST" action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="control-group">
+                                    <input type="text" class="form-control" placeholder="Name" required="required" name="name" id="name" />
+                                </div>
+                                <div class="control-group">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="required" />
+                                </div>
+                                <div class="control-group">
+                                    <input type="text" name="contact" id="contact" class="form-control" placeholder="Contact" required="required" />
+                                </div>
+                                <div class="control-group">
+                                    <input type="text" name="dob" id="dob" class="form-control" placeholder="DOB" required="required" />
+                                </div>
+
+                                <div class="control-group">
+                                    <textarea class="form-control" placeholder="address" name="address" id="address" required="required"></textarea>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <select name="city" id="city" class="form-control" required="required">
+                                        <option>select city</option>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <select name="area" id="area" class="form-control" required="required">
+                                        <option>select area</option>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <input type="file" name="f" id="f" class="form-control" required="required">
+                                </div>
+                                <div>
+                                    <button class="btn btn-custom" type="submit" name="submit" id="submit" value="submit">Become a volunteer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="volunteer-content">
+                            <div class="section-header">
+                                <p>Become A Volunteer</p>
+                                <h2>Let’s make a difference in the lives of others</h2>
+                            </div>
+                            <div class="volunteer-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl nec nisi maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Volunteer End -->
+{% endblock %}
+

@@ -1,0 +1,81 @@
+{% load static %}
+<div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact">
+                            <h2>Contact Us</h2>
+                            <!--Our Head Office <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p> -->
+                            <p><i class="fa fa-phone-alt"></i>+91 9106735726</p>
+                            <p><i class="fa fa-envelope"></i>pdhrumil@gmail.com</p>
+                            <div class="footer-social">
+                                <a class="btn btn-custom" href="https://x.com/Dhrumil94546584?t=W6ij3UPN-b7D2MevRl2UPw&s=09"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-custom" href="https://www.facebook.com/profile.php?id=100035561531937&mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                                <!-- <a class="btn btn-custom" href="{% static 'user/"><i class="fab fa-youtube"></i></a> -->
+                                <a class="btn btn-custom" href="https://www.instagram.com/dhrumilpatel21?igsh=dXB6bmFveGV6Nm5s"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-custom" href="https://www.linkedin.com/in/dhrumil-patel-660749221?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Popular Links</h2>
+                            <a href="/user/index">Home</a>
+                            <a href="/user/aboutus">About Us</a>
+                            <a href="/user/contact">Contact Us</a>
+                            <a href="/user/registeruser">Register</a>
+                            <a href="/user/login">login</a>
+                        </div>
+                    </div>
+                    {% if request.user.is_authenticated %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Get Involved</h2>
+                            <a href="/user/donate">Money Donation</a>
+                            <a href="/user/feedback">Feedback</a>
+                            <a href="/user/donation">Donation</a>
+                            <a href="/user/requestevents">Event Celebration</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Account</h2>
+                            <a href="/user/mymoneydonation"> My Money Donation</a>
+                            <a href="/user/myevents">My Event</a>
+                            <a href="/user/mydonations">My Donation</a>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <!-- <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Useful Links</h2>
+                            <a href="{% static 'user/">Terms of use</a>
+                            <a href="{% static 'user/">Privacy policy</a>
+                            <a href="{% static 'user/">Cookies</a>
+                            <a href="{% static 'user/">Help</a>
+                            <a href="{% static 'user/">FQAs</a>
+                        </div>
+                    </div> -->
+                    <div class="col-lg-3 col-md-6">
+                        <!-- <div class="footer-newsletter">
+                            <h2>Newsletter</h2>
+                            <form>
+                                <input class="form-control" placeholder="Email goes here">
+                                <button class="btn btn-custom">Submit</button>
+                                <label>Don't worry, we don't spam!</label>
+                            </form>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="container copyright">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; <a href="#">HelpingHand</a>, All Right Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Designed By <a>Dhrumil Patel</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>

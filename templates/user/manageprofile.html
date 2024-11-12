@@ -1,0 +1,127 @@
+{% extends 'user/common/layout.html' %}
+{% load static %}
+{% block content %}        
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Register</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="/user/index">Home</a>
+                        <a href="/user/registeruser">Manage Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        
+        <!-- Contact Start -->
+        <div class="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Get In Touch</p>
+                    <h2>Manage Profile</h2>
+                </div>
+                <div class="contact-img">
+                    <img src="{% static 'user/img/contact.jpg' %}" alt="Image">
+                </div>
+                <div class="contact-form">
+                        <div id="success"></div>
+                        <form  id="" novalidate="novalidate" method="POST" action="/user/updateregister/{{result.id}}" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+                            <div class="control-group">
+                                <input type="text" class="form-control" name='fname' id="fname" value="{{result.user.first_name}}" required="required"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" name='lname' id="lname" value="{{result.user.last_name}}" required="required"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" name='username' id="username" value="{{result.user.username}}" required="required"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="email" class="form-control" name='email' id="email" value="{{result.user.email}}" required="required"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" name='contact' id="contact" value="{{result.contact}}" required="required"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" name='dob' id="dob" value="{{result.dob}}" required="required"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control" name="address" id="address" placeholder="Address" required="required" data-validation-required-message="Please enter your message">{{result.address}}</textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <table  cellpadding="20">
+                                    <tr>
+                                        <td>Gender</td>
+                                        <td><input type="radio" name="gender" id="male" value="male" {% if result.gender == "male" %} checked {% endif %}>Male</td>
+                                        <td><input type="radio" name="gender" id="female" value="female" {% if result.gender == "female" %} checked {% endif %}>Female</td>
+                                    </tr>
+                                </table>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <select name="city" id="city" class="form-control">
+                                    <option value="">City</option>
+                                    {% for ci in city %}
+                                    <option value="{{ci.id}}" {% if result.city_id == ci.id %} selected {% endif %}>{{ci.city_name}}</option>
+                                    {% endfor %}
+                                </select>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <select name="area" id="area" class="form-control">
+                                    <option value="">Area</option>
+                                    {% for a in area %}
+                                    <option value="{{a.id}}" {% if result.area_id == a.id %} selected {% endif %}>{{a.area_name}}</option>
+                                    {% endfor %}
+                                </select>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="file" name='f' id="f" placeholder="Image" required="required"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <!-- <div class="control-group">
+                                <table>
+                                <tr>
+                                <td>Password</td>
+                                <td><input type="password"  name='password' id="password" required="required"/></td>
+                                <p class="help-block text-danger"></p>
+                                </tr>
+                            </table>
+                            </div> -->
+                            <div class="control-group">
+                                <select name="role" id="role" class="form-control">
+                                    <option value="">Role</option>
+                                    {% for r in role %}
+                                    <option value="{{r.id}}" {% if result.role_id == r.id %} selected {% endif %}>{{r.role}}</option>
+                                    {% endfor %}
+                                </select>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-custom" type="submit" name="submit" id="sendMessageButton">Register</button>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+
+        
+
+{% endblock %}
+

@@ -1,0 +1,59 @@
+{% load static %}
+<div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="/user/index" class="navbar-brand">HelpingHand</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="/user/index" class="nav-item nav-link active">Home</a>
+                        <a href="/user/aboutus" class="nav-item nav-link">About</a>
+                        <a href="/user/contact" class="nav-item nav-link">Contact</a>
+                        <!-- <a href="/user/causes" class="nav-item nav-link">Causes</a> -->
+                        <!-- <a href="/user/events" class="nav-item nav-link">Events</a> -->
+                        {% if request.user.is_authenticated %}
+                        <div class="nav-item dropdown">
+                            <a href="/#" class="nav-link dropdown-toggle" data-toggle="dropdown">Get Involved</a>
+                            <div class="dropdown-menu">
+                                <a href="/user/donate" class="dropdown-item">Money Donation</a>
+                                <!-- <a href="/user/volunteer" class="dropdown-item">Become A Volunteer</a> -->
+                                 <a href="/user/feedback" class="dropdown-item">Feedback</a>
+                                  <a href="/user/donation" class="dropdown-item">Donation</a>
+                                  <a href="/user/requestevents" class="dropdown-item">Request for Event Celebration</a>
+                            </div>
+                        </div>
+                        {% else %}
+                        <a href="/user/registeruser" class="nav-item nav-link">Register</a>
+                        {% endif %}
+                        {% if request.user.is_authenticated %}
+                        <div class="nav-item dropdown">
+                            <a href="/#" class="nav-link dropdown-toggle" data-toggle="dropdown">Account</a>
+                            <div class="dropdown-menu">
+                                <!-- <a href="/user/single" class="dropdown-item">Detail Page</a> -->
+                                <!-- <a href="/user/services" class="dropdown-item">What We Do</a> -->
+                                <!-- <a href="/user/meettheteam" class="dropdown-item">Meet The Team</a> -->
+                                <a href="/user/manageprofile" class="dropdown-item">Manage Profile</a>
+                                <!-- <a href="/user/donate" class="dropdown-item">Money Donation</a> -->
+                                <!-- <a href="/user/volunteer" class="dropdown-item">Become A Volunteer</a> -->
+                                 <!-- <a href="/user/feedback" class="dropdown-item">Feedback</a>
+                                  <a href="/user/donation" class="dropdown-item">Donation</a>
+                                  <a href="/user/requestevents" class="dropdown-item">Request for Event Celebration</a> -->
+                                  <a href="/user/myevents" class="dropdown-item">My Events</a>
+                                  <a href="/user/mymoneydonation" class="dropdown-item">My Money Donation</a>
+                                  <a href="/user/mydonations" class="dropdown-item">My Donation</a>
+                                  <!-- <a href="/user/registeruser" class="dropdown-item">Register</a> -->
+                                  <!-- <a href="/user/login" class="dropdown-item">Login</a> -->
+                                  
+                            </div>
+                        </div>
+                        <a href="/user/logout" class="nav-item nav-link">Logout</a>
+                        {% else %}
+                        <a href="/user/login" class="nav-item nav-link">Login</a>
+                        {% endif %}
+                            <!-- <a href="/user/login" class="nav-item nav-link">Login</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,71 @@
+{% load static %}
+<nav class="pcoded-navbar">
+<div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+<div class="pcoded-inner-navbar main-menu">
+    <div class="">
+        <div class="main-menu-header">
+            <img class="img-80 img-radius" src="/media/upload/{{profile.image}}" alt="User-Profile-Image">
+            <div class="user-details">
+                <span id="more-details">{{request.user.first_name}} {{request.user.last_name}}</span>
+            </div>
+        </div>
+
+        <!-- <div class="main-menu-content">
+            <ul>
+                <li class="more-details">
+                    <a href="{% static 'volunteeruser-profile.html"><i class="ti-user"></i>View Profile</a>
+                    <a href="{% static 'volunteer#!"><i class="ti-settings"></i>Settings</a>
+                    <a href="/volunteer/logout"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                </li>
+            </ul>
+        </div> -->
+    </div>
+    <div class="p-15 p-b-0">
+        
+    </div>
+    <!-- <div class="pcoded-navigation-label" data-i18n="nav.category.navigation"></div> -->
+    <ul class="pcoded-item pcoded-left-item">
+        <li class="active">
+            <a href="/volunteer/dashboard" class="waves-effect waves-dark">
+                <span class="pcoded-micon"><i class="ti-home"></i></span>
+                <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                <span class="pcoded-mcaret"></span>
+            </a>
+        </li>
+
+        <!-- <li class="">
+                    <a href="" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                        <span class="pcoded-mtext">Manange profile</span>        
+                    </a>
+        </li> -->
+
+        <li class="">
+                    <a href="/volunteer/alldonation" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                        <span class="pcoded-mtext">View Donation Post</span>       
+                    </a>
+        </li>
+        <li class="">
+            <a href="/volunteer/acceptedpost" class="waves-effect waves-dark">
+                <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                <span class="pcoded-mtext" data-i18n="nav.dash.main">My accepted Donation</span>                
+            </a>
+        </li>
+        <!-- <li class="">
+                    <a href="" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                        <span class="pcoded-mtext">Update Remark of post</span>      </a>
+        </li> -->
+        <li class="">
+            <a href="/volunteer/logout" class="waves-effect waves-dark">
+                <span class="pcoded-micon"><i class="fa fa-sign-out"></i></span>
+                <span class="pcoded-mtext" data-i18n="nav.dash.main">Logout</span>
+
+            </a>
+        </li>
+
+    </ul>
+    
+</div>
+</nav>

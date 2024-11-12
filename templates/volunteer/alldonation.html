@@ -1,0 +1,64 @@
+{% extends 'volunteer/common/layout.html'%}
+{% block content %}
+
+     <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <!-- Basic table card start -->
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Donation</h3>
+                            <!-- <span>use class <code>table-hover</code> inside table element</span> -->
+                            
+                        </div>
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                            <th>Category</th>
+                                            <th>View Details</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    {% for row in result %}
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">{{row.id}}</th>
+                                            <td>{{row.title}}</td>
+                                            <td>{{row.decoration}}</td>
+                                            <td>{{row.category.cname}}</td>
+                                            <td><a href="/volunteer/viewdetaildonationpost/{{row.id}}" style="font-size:17px;">View Details</a></td>
+                                            <!-- <td>{{row.date}}</td>
+                                            <td>{{row.address}}</td>
+                                            <td>{{row.city.city_name}}</td>
+                                            <td>{{row.area.area_name}}</td>
+                                            <td>{{row.state.state_name}}</td> -->
+                                           <!--  <td>Accept</td>
+                                            <td>Reject</td> -->
+                                            <!-- <td><a href="/myadmin/deletefeedback/{{row.id}}">Delete</a></td> -->
+                                        </tr>
+                                        
+                                    </tbody>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Page-body end -->
+            </div>
+        </div>
+        <!-- Main-body end -->
+
+
+{% endblock%}
+

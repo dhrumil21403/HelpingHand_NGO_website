@@ -1,0 +1,84 @@
+{% extends 'user/common/layout.html' %}
+{% load static %}
+{% block content %} 
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+    {% endif %}
+
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Login</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="/user/index">Home</a>
+                        <a href="/user/login">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        
+        <!-- Contact Start -->
+        <div class="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Get In Touch</p>
+                    <h2>Login</h2>
+                </div>
+                <div class="contact-img">
+                    <img src="{% static 'user/img/contact.jpg' %}" alt="Image">
+                </div>
+                <div class="contact-form">
+                        <div id="success"></div>
+                        <form  id="" novalidate="novalidate" method="POST" action="/user/login_check">
+                            {% csrf_token %}
+                            <div class="control-group">
+                                <table cellpadding="20">
+                                <tr>
+                                <td>Username</td>
+                                <td><input type="text" class="form-control" name='username' id="username" placeholder="Username" required="required"/></td>
+                                </tr>
+                            </table>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <table cellpadding="20">
+                                <tr>
+                                <td>Password</td>
+                                <td><input type="password"  name='password' id="password" required="required"/></td>    
+                                </tr>
+                            </table>
+                            <p class="help-block text-danger"></p>
+                            </div>
+                            <!-- <div class="control-group">
+                                <select name="role" id="role" class="form-control">
+                                    <option value="">Role</option>
+                                    {% for r in role %}
+                                    <option value="{{r.id}}">{{r.role}}</option>
+                                    {% endfor %}
+                                </select>
+                                <p class="help-block text-danger"></p>
+                            </div> -->
+                            <div>
+                                <button class="btn btn-custom" type="submit" name="submit" id="sendMessageButton">Login</button>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+
+        
+
+{% endblock %}
+

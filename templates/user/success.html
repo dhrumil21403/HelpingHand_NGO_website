@@ -1,0 +1,52 @@
+{% extends 'user/common/layout.html' %}
+{% load static %}
+{% block content %} 
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+    {% endif %}
+
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Paynment Successfull</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="/user/index">Home</a>
+                        <!-- <a href="/user/login">Login</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        
+        <!-- Contact Start -->
+        <div class="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Get In Touch</p>
+                    <h2>Paynment Successfull</h2>
+                </div>
+                <div class="contact-img">
+                    <img src="{% static 'user/img/contact.jpg' %}" alt="Image">
+                </div>
+                <div class="contact-form">
+                        <div id="success"></div>
+                        <h1>Success !! Your Payment has successfylly done.</h1>
+                    </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+
+        
+
+{% endblock %}
+

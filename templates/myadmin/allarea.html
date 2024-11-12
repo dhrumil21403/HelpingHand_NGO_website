@@ -1,0 +1,60 @@
+{% extends 'myadmin/common/layout.html'%}
+{% block content %}
+
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <!-- Basic table card start -->                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Area</h3>
+                            <!-- <span>use class <code>table-hover</code> inside table element</span> -->      
+                        </div>
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Area ID</th>
+                                            <th>Area Name</th>
+                                            <th>City</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    {% for row in result %}
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">{{row.id}}</th>
+                                            <td>{{row.area_name}}</td>
+                                            <td>{{row.city_id}}</td>
+                                            <td scope="row"><a href="/myadmin/editarea/{{row.id}}">Edit</a></td>
+                                            <td scope="row"><a href="/myadmin/deletearea/{{row.id}}">Delete</a></td>
+                                        </tr>           
+                                    </tbody>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Page-body end -->
+            </div>
+        </div>
+        <!-- Main-body end -->
+
+        <div id="styleSelector">
+        </div>
+    </div>
+<!-- </div>
+</div>
+</div>
+</div>
+</div>
+ -->
+{% endblock%}
+

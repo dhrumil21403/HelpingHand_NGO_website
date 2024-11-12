@@ -1,0 +1,58 @@
+{% extends 'user/common/layout.html' %}
+{% load static %}
+{% block content %}        
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Money Donation</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="/user/index">Home</a>
+                        <a href="/user/payment_process">Money Donation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        
+        <!-- Contact Start -->
+        <div class="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Payment !!</p>
+                    <h2>Make Payment to get Help</h2>
+                </div>
+                <div class="contact-img">
+                    <img src="{% static 'user/img/contact.jpg' %}" alt="Image">
+                </div>
+                <div class="contact-form">
+                        <div id="success"></div>
+                        <form class="text-center border border-light p-5" action="/user/success" method="POST">
+        {% csrf_token %}
+
+        <!-- RAZORPAY INTEGRATION HERE -->
+        <script src="https://checkout.razorpay.com/v1/checkout.js" 
+        data-key="rzp_test_PvM4GxK9MYlCUc" 
+        data-amount="{{payment.amount}}"
+        data-currency="INR" 
+        data-order_id="{{payment.id}}" 
+        data-buttontext="Pay with Razorpay"
+        data-name="Halping Hand"
+        data-description="Complete NGO Solution"
+        data-image="https://oibp1.000webhostapp.com/logo.PNG" 
+        data-prefill.name="{{request.user.first_name}}"
+        data-prefill.email="{{request.user.email}}" 
+        data-theme.color="#F37254"></script></form>
+                    </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+
+        
+
+{% endblock %}
+
